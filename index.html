@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>HTML 5 Boilerplate</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <nav>
     <div class="nav-container">
@@ -39,16 +39,30 @@
         </div>
       </div>
       <div class="nav-links">
-        <button>Home</button>
-        <button>About</button>
-        <button>Contact</button>
+        <button id="home" class="active">Home</button>
+        <button id="about">About</button>
+        <button id="contact">Contact</button>
       </div>
     </div>
   </nav>
   <body>
     <div class="main-container">
-      Hey, I can center a div
-      <div>Please Hire Me</div>
+      <!-- Home Content-->
+      <div id="home-content" class="content">
+        <h2>Home</h2>
+        Hey, I can center a div
+        <div>Please Hire Me</div>
+      </div>
+      <!-- About Content-->
+      <div id="about-content" class="hidden content">
+        <h2>About</h2>
+        <div>Please Hire Me</div>
+      </div>
+      <!-- Contact Content-->
+      <div id="contact-content" class="hidden content">
+        <h2>Contact</h2>
+        <div>Please Hire Me</div>
+      </div>
     </div>
     <script src="main.mjs" type="module"></script>
   </body>
