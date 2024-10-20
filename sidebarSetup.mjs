@@ -9,7 +9,7 @@ export const sidebarSetup = {
     welcomeMessage: "Welcome to my website",
     1: {
       title: "home 1",
-      content: "home 1 content",
+      content: "content/test.html",
     },
     2: {
       title: "home 2",

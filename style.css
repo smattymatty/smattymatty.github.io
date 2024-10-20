@@ -226,7 +226,7 @@ h2 {
 }
 
 .sidebar a.active {
-  color: var(--accent-color);
+  color: var(--text-primary-color);
   font-weight: bold;
   transform: scale(1.05);
 }
