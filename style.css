@@ -1,16 +1,37 @@
 :root {
-  --main-bg-color: rgb(255, 255, 255);
-  --primary-color: rgb(0, 0, 0);
+  --main-bg-color: rgb(250, 250, 250);
+  --primary-color: rgb(6, 6, 22);
   --text-color: rgb(0, 0, 0);
   --text-primary-color: rgb(255, 255, 255);
+  --accent-color: rgba(133, 211, 207, 0.596);
+}
+
+* {
+  color: var(--primary-color);
+  font-family: "Newsreader", serif;
 }
 
 .main-container {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: space-between;
   align-items: center;
   height: 80vh;
+  max-width: 100%;
+}
+
+@media (max-width: 764px) {
+  .main-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    max-width: 100%;
+  }
+}
+
+body {
+  background-color: var(--main-bg-color);
 }
 
 h2 {
@@ -20,10 +41,10 @@ h2 {
 .nav-container {
   display: flex;
   flex-direction: row;
-  justify-content: first baseline;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--primary-color);
   transition: all 0.2s ease-in-out;
 }
 
@@ -47,6 +68,7 @@ h2 {
   width: 100%;
   margin-left: 0.2rem;
   margin-right: 0.2rem;
+  margin-bottom: 0.4rem;
 }
 
 .social-logos a img {
@@ -91,7 +113,7 @@ h2 {
   padding-bottom: 0.5rem;
   margin-top: 1rem;
   transition: all 0.2s ease-in-out;
-  background-color: var(--main-bg-color);
+  background-color: white;
 
   border-radius: 0.5rem;
   margin-bottom: 0.5rem;
@@ -105,12 +127,36 @@ h2 {
   font-style: normal;
   user-select: none;
   margin-right: 1rem;
+  max-width: 32rem;
 }
 
 .nav-links button:hover,
 .nav-title:hover {
   cursor: pointer;
   transform: scale(1.05);
+}
+
+.nav-links button.active:hover,
+.nav-title.active:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+}
+
+@keyframes click-animation {
+  0% {
+    border: 4px solid var(--accent-color);
+  }
+  50% {
+    border: 1px solid var(--accent-color);
+    padding: 0.8rem;
+  }
+  100% {
+    border: 4px solid var(--accent-color);
+  }
+}
+
+.click-animation {
+  animation: click-animation 0.5s ease-in-out;
 }
 
 .nav-links button.active,
@@ -136,7 +182,6 @@ h2 {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin-bottom: 1rem;
     margin-top: -1rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -150,4 +195,66 @@ h2 {
 
 .hidden {
   display: none;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  min-height: 8rem;
+  background-color: var(--primary-color);
+  padding: 1rem;
+}
+
+.sidebar a {
+  text-decoration: underline;
+  color: var(--text-primary-color);
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 0.4rem;
+  cursor: pointer;
+}
+
+.sidebar a:hover {
+  font-weight: bold;
+}
+
+.sidebar a:active {
+  color: var(--accent-color);
+  transform: scale(0.95);
+  font-weight: bold;
+}
+
+.sidebar a.active {
+  color: var(--accent-color);
+  font-weight: bold;
+  transform: scale(1.05);
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  text-align: center;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+}
+
+.content.hidden {
+  display: none;
+}
+
+.first-zone {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.welcome-message {
+  width: 100%;
+  text-align: center;
 }

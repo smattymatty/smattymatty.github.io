@@ -17,11 +17,13 @@
   <nav>
     <div class="nav-container">
       <div class="first-nav-container">
-        <button class="nav-title" id="home">Mathew Storm</button>
+        <button class="nav-title" id="home" style="margin-top: -0rem">
+          Mathew Storm
+        </button>
         <div class="social-logos">
           <a href="https://github.com/smattymatty">
             <img
-              src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+              src="https://www.svgrepo.com/show/512317/github-142.svg"
               alt="Github Logo"
             />
           </a>
@@ -46,6 +48,7 @@
         </div>
       </div>
       <div class="nav-links">
+        <button id="projects">Projects</button>
         <button id="about">About</button>
         <button id="contact">Contact</button>
       </div>
@@ -53,10 +56,30 @@
   </nav>
   <body>
     <div class="main-container">
+      <div class="first-zone">
+        <!-- Welcome Message-->
+        <div class="welcome-message">
+          Hey, I can center a div
+          <div>Please Hire Me</div>
+        </div>
+        <!-- Side Bar-->
+        <div class="sidebar">
+          <a>Link 1</a>
+          <a>Link 2</a>
+          <a>Link 3</a>
+          <a>Link 4</a>
+        </div>
+      </div>
+
       <!-- Home Content-->
       <div id="home-content" class="content">
         <h2>Home</h2>
         Hey, I can center a div
+        <div>Please Hire Me</div>
+      </div>
+      <!-- Projects Content-->
+      <div id="projects-content" class="hidden content">
+        <h2>Projects</h2>
         <div>Please Hire Me</div>
       </div>
       <!-- About Content-->
@@ -70,6 +93,7 @@
         <div>Please Hire Me</div>
       </div>
     </div>
+
     <script src="main.mjs" type="module"></script>
   </body>
 </html>
