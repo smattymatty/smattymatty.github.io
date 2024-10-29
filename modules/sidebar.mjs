@@ -40,6 +40,7 @@ export class Sidebar {
   }
 
   changePage(newPage) {
+    console.log("🔄 Sidebar: Changing page to:", newPage);
     this.currentPage = newPage;
     this.setupSideBar();
   }

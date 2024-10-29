@@ -1,10 +1,16 @@
-export function loadHTMLContent(url, callback) {
-  const xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      callback(xhr.responseText);
+// loaders.mjs
+export async function loadHTMLContent(url) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(
+        `Failed to load content from ${url}: ${response.statusText}`
+      );
     }
-  };
-  xhr.open("GET", url, true);
-  xhr.send();
+    const content = await response.text();
+    return content;
+  } catch (error) {
+    console.error("Error loading HTML content:", error);
+    return `<p>Error loading content from ${url}</p>`;
+  }
 }

@@ -1,3 +1,5 @@
+import { loadHTMLContent } from "./modules/loaders.mjs";
+
 /**
  * Sidebar Setup
  *
@@ -6,10 +8,12 @@
  */
 export const sidebarSetup = {
   home: {
-    welcomeMessage: "Welcome to my website",
+    welcomeMessage: "Home Page",
     1: {
-      title: "home 1",
-      content: "content/test.html",
+      title: "About",
+      content: await loadHTMLContent(
+        "https://lobster-app-ftxys.ondigitalocean.app/spellbook/introduction"
+      ),
     },
     2: {
       title: "home 2",

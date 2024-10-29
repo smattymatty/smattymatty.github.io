@@ -39,11 +39,13 @@ h2 {
 }
 
 .nav-container {
+  position: relative;
+  z-index: 20;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 102%;
   border-bottom: 1px solid var(--primary-color);
   transition: all 0.2s ease-in-out;
 }
@@ -185,11 +187,37 @@ h2 {
     margin-top: -1rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    margin-bottom: 8.2vh;
     transition: all 0.2s ease-in-out;
 
     justify-content: center;
 
     height: 100%;
+  }
+
+  .spellbook-md {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  .spellbook-md p {
+    font-size: 1rem;
+    margin-left: 1rem !important;
+    padding-right: 0.2rem !important;
+  }
+
+  .spellbook-md h1 {
+    font-size: 1.8rem !important;
+  }
+  .spellbook-md h2 {
+    font-size: 1.6rem !important;
+  }
+
+  .spellbook-md h3 {
+    font-size: 1.4rem !important;
+  }
+
+  .welcome-message {
+    font-size: 2rem !important;
   }
 }
 
@@ -232,6 +260,8 @@ h2 {
 }
 
 .content {
+  position: relative;
+  z-index: 5;
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -249,12 +279,67 @@ h2 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  position: relative;
   align-items: center;
-  width: 100%;
+  width: 102%;
   border-bottom: 1px solid var(--primary-color);
+  background-color: var(--main-bg-color);
 }
 
 .welcome-message {
   width: 100%;
   text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.spellbook-md {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: flex-start;
+  text-align: left;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  background-color: rgb(240, 249, 252);
+}
+
+.spellbook-md h1,
+h2,
+h3 {
+  color: rgb(34, 56, 68);
+}
+
+.spellbook-md h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.1rem !important;
+}
+
+.spellbook-md h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.1rem !important;
+  margin-left: 0.5rem;
+}
+
+.spellbook-md h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.1rem !important;
+  margin-left: 1rem;
+}
+
+.spellbook-md p {
+  font-size: 1.2rem;
+  font-weight: normal;
+  margin-left: 1.5rem;
+  padding-right: 1.5rem;
+  opacity: 0.85;
+}
+
+.sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
