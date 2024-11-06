@@ -10,7 +10,8 @@ export async function loadHTMLContent(url) {
     const content = await response.text();
     return content;
   } catch (error) {
-    console.error("Error loading HTML content:", error);
+    console.log("Error loading HTML content:", error);
+    console.log(error);
     return `<p>Error loading content from ${url}</p>`;
   }
 }

@@ -1,9 +1,13 @@
 :root {
   --main-bg-color: rgb(250, 250, 250);
+  --seconday-bg-color: rgb(240, 249, 252);
   --primary-color: rgb(6, 6, 22);
   --text-color: rgb(0, 0, 0);
   --text-primary-color: rgb(255, 255, 255);
   --accent-color: rgba(133, 211, 207, 0.596);
+  --content-heading-color: rgb(34, 56, 68);
+  --content-text-color: rgba(12, 25, 32, 0.911);
+  --spellbook-background-color: rgb(240, 249, 252);
 }
 
 * {
@@ -16,8 +20,9 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 80vh;
+  height: auto;
   max-width: 100%;
+  background-color: var(--spellbook-background-color);
 }
 
 @media (max-width: 764px) {
@@ -25,7 +30,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: auto;
     max-width: 100%;
   }
 }
@@ -46,8 +51,14 @@ h2 {
   justify-content: space-between;
   align-items: center;
   width: 102%;
+  right: 7px;
+  bottom: 5px;
+  margin-bottom: -0.4rem;
+  padding-left: 0.2rem;
   border-bottom: 1px solid var(--primary-color);
   transition: all 0.2s ease-in-out;
+  background-color: var(--seconday-bg-color);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
 .nav-container a {
@@ -150,7 +161,8 @@ h2 {
   }
   50% {
     border: 1px solid var(--accent-color);
-    padding: 0.8rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
   }
   100% {
     border: 4px solid var(--accent-color);
@@ -179,15 +191,20 @@ h2 {
   text-align: center;
 }
 
+@media (min-width: 1200px) {
+  .sidebar {
+    width: 66% !important;
+  }
+}
+
 @media (max-width: 764px) {
   .nav-container {
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 103%;
     margin-top: -1rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    margin-bottom: 8.2vh;
     transition: all 0.2s ease-in-out;
 
     justify-content: center;
@@ -195,10 +212,16 @@ h2 {
     height: 100%;
   }
 
+  .first-zone {
+    width: 100vw !important;
+  }
+
   .spellbook-md {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
+    max-width: 95%;
   }
+
   .spellbook-md p {
     font-size: 1rem;
     margin-left: 1rem !important;
@@ -219,6 +242,11 @@ h2 {
   .welcome-message {
     font-size: 2rem !important;
   }
+
+  pre {
+    font-size: 0.9rem !important;
+    max-width: 95%;
+  }
 }
 
 .hidden {
@@ -230,15 +258,19 @@ h2 {
   flex-direction: column;
   overflow-y: scroll;
   width: 20rem;
-  min-height: 4rem;
-  max-height: 6rem;
-  background-color: var(--primary-color);
+  min-height: 2rem;
+  max-height: 4rem;
+  background-color: var(--main-bg-color);
   padding: 1rem;
+  border-right: 1vw solid var(--primary-color);
+  border-top: 1px solid var(--primary-color);
+  border-bottom: 1px solid var(--primary-color);
+  overflow-x: hidden;
 }
 
 .sidebar a {
   text-decoration: underline;
-  color: var(--text-primary-color);
+  color: var(--primary-color);
   font-size: 1.2rem;
   text-align: center;
   padding: 0.4rem;
@@ -250,13 +282,13 @@ h2 {
 }
 
 .sidebar a:active {
-  color: var(--accent-color);
+  color: black;
   transform: scale(0.95);
   font-weight: bold;
 }
 
 .sidebar a.active {
-  color: var(--text-primary-color);
+  color: black;
   font-weight: bold;
   transform: scale(1.05);
 }
@@ -280,12 +312,17 @@ h2 {
 .first-zone {
   display: flex;
   flex-direction: row;
+  flex-grow: 22;
   justify-content: space-between;
-  position: relative;
+  position: sticky;
   align-items: center;
-  width: 102%;
+  width: 100vw;
+  border-left: 1vw solid white;
+  background-color: var(--primary-color);
   border-bottom: 1px solid var(--primary-color);
-  background-color: var(--main-bg-color);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  top: 0;
+  z-index: 10;
 }
 
 .welcome-message {
@@ -293,6 +330,7 @@ h2 {
   text-align: center;
   font-size: 3rem;
   font-weight: bold;
+  color: var(--text-primary-color);
 }
 
 .spellbook-md {
@@ -303,13 +341,15 @@ h2 {
   text-align: left;
   padding-left: 3rem;
   padding-right: 3rem;
-  background-color: rgb(240, 249, 252);
+  background-color: var(--seconday-bg-color);
+  color: var(--spellbook-background-color);
+  max-width: clamp(20rem, 80%, 80rem); /* Sets a flexible max width */
 }
 
 .spellbook-md h1,
 h2,
 h3 {
-  color: rgb(34, 56, 68);
+  color: var(--content-heading-color);
 }
 
 .spellbook-md h1 {
@@ -338,6 +378,27 @@ h3 {
   margin-left: 1.5rem;
   padding-right: 1.5rem;
   opacity: 0.85;
+  margin-bottom: 0.6rem !important;
+  margin-top: 0.6rem !important;
+  color: var(--content-text-color);
+}
+
+.spellbook-md ul {
+  margin-top: 0.2rem !important;
+  margin-bottom: 0.2rem !important;
+
+  font-size: 1.2rem;
+  font-weight: normal;
+  margin-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  opacity: 0.85;
+  border-left: 1px dashed rgba(0, 0, 0, 0.5);
+}
+
+.spellbook-md ul li {
+  color: var(--content-text-color);
 }
 
 .sticky-top {
@@ -362,4 +423,5 @@ pre {
   margin-right: auto;
   width: 100%;
   opacity: 0.9;
+  overflow-x: scroll;
 }
