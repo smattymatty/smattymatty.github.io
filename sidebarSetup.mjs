@@ -46,8 +46,8 @@ export const sidebarSetup = {
       content: "projects 3 content",
     },
   },
-  about: {
-    welcomeMessage: "Welcome to my about",
+  tools: {
+    welcomeMessage: "Welcome to my tools",
     1: {
       title: "about 1",
       content: "about 1 content",
@@ -61,19 +61,19 @@ export const sidebarSetup = {
       content: "about 3 content",
     },
   },
-  contact: {
-    welcomeMessage: "Welcome to my contact",
+  blog: {
+    welcomeMessage: "Welcome to my Blog",
     1: {
-      title: "contact 1",
-      content: "contact 1 content",
+      title: "blog 1",
+      content: "blog 1 content",
     },
     2: {
-      title: "contact 2",
-      content: "contact 2 content",
+      title: "blog 2",
+      content: "blog 2 content",
     },
     3: {
-      title: "contact 3",
-      content: "contact 3 content",
+      title: "blog 3",
+      content: "blog 3 content",
     },
   },
 };

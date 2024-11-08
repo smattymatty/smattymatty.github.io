@@ -412,7 +412,7 @@ h3 {
 
 .spellbook-md ol {
   margin-bottom: 0.2rem !important;
-
+  width: auto;
   font-size: 1.2rem;
   font-weight: normal;
   margin-left: 1.5rem;
@@ -437,6 +437,7 @@ code {
   padding: 0.2rem;
   border-radius: 0.2rem;
   color: var(--text-primary-color);
+  word-break: break-all;
 }
 
 pre {
