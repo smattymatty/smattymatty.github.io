@@ -14,81 +14,145 @@
       rel="stylesheet"
     />
   </head>
-  <nav>
-    <div class="nav-container">
-      <div class="first-nav-container">
-        <button class="nav-title active" id="home" style="margin-top: -0rem">
-          Mathew Storm
-        </button>
-        <div class="social-logos">
-          <a href="https://github.com/smattymatty">
-            <img
-              src="https://www.svgrepo.com/show/512317/github-142.svg"
-              alt="Github Logo"
-            />
-          </a>
-          <a href="https://techhub.social/@smattymatty">
-            <img
-              src="https://www.svgrepo.com/show/333570/mastodon.svg"
-              alt="Mastodon Logo"
-            />
-          </a>
-          <a href="https://www.youtube.com/@MatHEWStorm"
-            ><img
-              src="https://icons.iconarchive.com/icons/aniket-suvarna/box-logo/256/bxl-youtube-icon.png"
-              alt="Youtube Logo"
-            />
-          </a>
-          <a>
-            <img
-              src="https://www.svgrepo.com/show/479055/question-mark-outline.svg"
-              alt="Python Logo"
-            />
-          </a>
-        </div>
-      </div>
-      <div class="nav-links">
-        <button id="projects">Projects</button>
-        <button id="about">About</button>
-        <button id="contact">Contact</button>
-      </div>
-    </div>
-  </nav>
+
   <body>
-    <div class="main-container">
-      <div class="first-zone sticky-top">
-        <!-- Welcome Message-->
-        <div class="welcome-message">
-          ...
-          <div>...</div>
+    <header>
+      <nav>
+        <div class="nav-container">
+          <div class="first-nav-container">
+            <h1 class="nav-title" id="home">Mathew Storm</h1>
+            <div class="social-logos" aria-label="Social Media Links">
+              <a
+                href="https://github.com/smattymatty"
+                aria-label="Visit my GitHub profile"
+              >
+                <img
+                  src="https://www.svgrepo.com/show/512317/github-142.svg"
+                  alt="GitHub"
+                />
+              </a>
+              <a href="https://techhub.social/@smattymatty">
+                <img
+                  src="https://www.svgrepo.com/show/333570/mastodon.svg"
+                  alt="Mastodon Logo"
+                />
+              </a>
+              <a href="https://www.youtube.com/@MatHEWStorm"
+                ><img
+                  src="https://icons.iconarchive.com/icons/aniket-suvarna/box-logo/256/bxl-youtube-icon.png"
+                  alt="Youtube Logo"
+                />
+              </a>
+              <a>
+                <img
+                  src="https://www.svgrepo.com/show/479055/question-mark-outline.svg"
+                  alt="Python Logo"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="nav-links" role="navigation">
+            <button id="projects" aria-label="View Projects">Projects</button>
+            <button id="about" aria-label="About Me">About</button>
+            <button id="contact" aria-label="Contact Information">
+              Contact
+            </button>
+          </div>
         </div>
-        <!-- Side Bar-->
-        <div class="sidebar"></div>
-      </div>
+      </nav>
+    </header>
 
-      <!-- Home Content-->
-      <div id="home-content" class="content">
-        <h2>Home</h2>
-        Hey, I can center a div
-        <div>Please Hire Me</div>
-      </div>
-      <!-- Projects Content-->
-      <div id="projects-content" class="hidden content">
+    <main class="main-container">
+      <aside class="first-zone sticky-top">
+        <section class="welcome-message" aria-label="Welcome Message">
+          <!-- Your welcome message content -->
+        </section>
+        <section class="sidebar" aria-label="Additional Information">
+          <!-- Sidebar content -->
+        </section>
+      </aside>
+
+      <section id="home-content" class="content">
+        <!-- Home content -->
+      </section>
+
+      <section id="projects-content" class="hidden content">
         <h2>Projects</h2>
-        <div>Please Hire Me</div>
-      </div>
-      <!-- About Content-->
-      <div id="about-content" class="hidden content">
-        <h2>About</h2>
-        <div>Please Hire Me</div>
-      </div>
-      <!-- Contact Content-->
-      <div id="contact-content" class="hidden content">
-        <h2>Contact</h2>
-        <div>Please Hire Me</div>
-      </div>
-    </div>
+        <article class="project">
+          <!-- Individual project content -->
+        </article>
+      </section>
 
+      <section id="about-content" class="hidden content">
+        <h2>About</h2>
+        <!-- About content -->
+      </section>
+
+      <section id="contact-content" class="hidden content">
+        <h2>Contact</h2>
+        <!-- Contact content -->
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h3>Connect</h3>
+            <ul>
+              <li><a href="https://github.com/smattymatty">GitHub</a></li>
+              <li>
+                <a href="https://techhub.social/@smattymatty">Mastodon</a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/@MatHEWStorm">YouTube</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h3>Contact Info</h3>
+            <address>
+              <p>
+                Email:
+                <a href="mailto:MathewStormDev@gmail.com"
+                  >MathewStormDev@gmail.com</a
+                >
+              </p>
+            </address>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; <span id="current-year">2024</span> Mathew Storm Dev. All
+            rights reserved.
+          </p>
+          <p>
+            <!-- 
+            <a href="/privacy-policy">Privacy Policy</a> |
+            <a href="/terms-of-service">Terms of Service</a>
+            -->
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Update copyright year automatically
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+    </script>
     <script src="main.mjs" type="module"></script>
   </body>
 </html>

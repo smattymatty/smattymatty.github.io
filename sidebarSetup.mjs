@@ -1,5 +1,9 @@
-import { loadHTMLContent } from "./modules/loaders.mjs";
+import { ContentLoader } from "./modules/loaders.mjs";
 
+const contentLoader = new ContentLoader();
+
+export const SPELLBOOK_URL =
+  "https://lobster-app-ftxys.ondigitalocean.app/spellbook";
 /**
  * Sidebar Setup
  *
@@ -8,16 +12,15 @@ import { loadHTMLContent } from "./modules/loaders.mjs";
  */
 export const sidebarSetup = {
   home: {
-    welcomeMessage: "Home Page",
+    welcomeMessage: "About",
     1: {
       title: "About",
-      content: await loadHTMLContent(
-        "https://lobster-app-ftxys.ondigitalocean.app/spellbook/introduction"
-      ),
+      content: await contentLoader.loadContent(`${SPELLBOOK_URL}/introduction`),
+      path: "/introduction",
     },
     2: {
       title: "home 2",
-      content: "home 2 content",
+      content: await contentLoader.loadContent(`${SPELLBOOK_URL}/ff/sb_intro`),
     },
     3: {
       title: "home 3",
@@ -28,8 +31,11 @@ export const sidebarSetup = {
   projects: {
     welcomeMessage: "Welcome to my projects",
     1: {
-      title: "projects 1",
-      content: "projects 1 content",
+      title: "Django Spellbook",
+      content: await contentLoader.loadContent(
+        `${SPELLBOOK_URL}/spellbook/sb_intro`
+      ),
+      path: "/spellbook/sb_intro",
     },
     2: {
       title: "projects 2",
